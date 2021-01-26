@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cargo",
+            "command": "build --example ${fileBasenameNoExtension}",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "cargo build --examples"
+        },
+        {
+            "type": "cargo",
+            "command": "build --example ${fileBasenameNoExtension} --release",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "cargo build --examples --release"
+        },
+        {
+            "type": "cargo",
+            "command": "build --example ${fileBasenameNoExtension} --release --features nightly",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "cargo build --examples --release --nightly"
+        },
+        {
+            "type": "cargo",
+            "command": "build --example ${fileBasenameNoExtension} --features nightly",
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "group": "build",
+            "label": "cargo build --examples --nightly"
+        },
+    ]
+}
