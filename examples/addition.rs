@@ -5,7 +5,7 @@
 
 use panic_halt as _;
 
-#[rtic::app(device = stm32f4xx_hal::stm32, monotonic = rtic::cyccnt::CYCCNT, peripherals = true, dispatchers = [EXTI0])]
+#[rtic::app(device = stm32f4xx_hal::stm32, monotonic = rtic::cyccnt::CYCCNT, dispatchers = [EXTI0])]
 mod app {
     use cortex_m::asm;
     use rtic::cyccnt::U32Ext;

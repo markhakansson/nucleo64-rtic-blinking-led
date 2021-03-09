@@ -4,10 +4,10 @@
 #![no_std]
 #![feature(asm)]
 
+use cortex_m::asm;
 use panic_halt as _;
 use rtic::cyccnt::{Instant, U32Ext};
 use stm32f4xx_hal::{gpio::*, prelude::*};
-use cortex_m::asm;
 
 const PERIOD: u32 = 4_000_000;
 
@@ -16,7 +16,7 @@ const APP: () = {
     struct Resources {
         led: gpioa::PA5<Output<PushPull>>,
     }
-    
+
     #[no_mangle]
     #[inline(never)]
     #[init(schedule = [led_on])]
